@@ -1,11 +1,10 @@
-// third-party
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { IconKey, IconBug } from '@tabler/icons-react';
+import { IconKey, IconBug, IconBook, IconHelp } from '@tabler/icons-react'; // Make sure to import the appropriate icons
 
-// constant
-const icons = { IconKey, IconBug };
+// constants
+const icons = { IconKey, IconBug, IconBook, IconHelp }; // Add IconHelp to the icons constant
 
 // ==============================|| EXTRA PAGES MENU ITEMS ||============================== //
 
@@ -73,6 +72,38 @@ const pages = {
                     target: true
                 }
             ]
+        },
+        {
+            id: 'lessons',
+            title: <FormattedMessage id="lessons" />,
+            type: 'collapse',
+            icon: icons.IconBook,
+            url: '/pages/lessons',
+            target: true,
+            children: [
+                {
+                    id: 'lesson-error',
+                    title: <FormattedMessage id="error-404" />,
+                    type: 'item',
+                    url: '/pages/lessons/error',
+                    target: true
+                },
+                {
+                    id: 'another-page',
+                    title: <FormattedMessage id="lessons" />,
+                    type: 'item',
+                    url: '/pages/lessons/lessons',
+                    target: true
+                }
+            ]
+        },
+        {
+            id: 'quizzes',
+            title: <FormattedMessage id="quizzes" />,
+            type: 'collapse',
+            icon: icons.IconHelp,
+            url: '/pages/quizzes',
+            target: true
         }
     ]
 };
